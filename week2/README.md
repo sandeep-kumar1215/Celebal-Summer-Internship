@@ -1,12 +1,76 @@
-# React + Vite
+# To-Do List Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This document provides guidance on how to test the To-Do List component to ensure its functionality and reliability. The To-Do List component allows users to add, remove, and mark tasks as completed. Additionally, it supports task sorting and filtering, with data persistence via localStorage.
 
-Currently, two official plugins are available:
+## Prerequisites
+- Node.js and npm installed
+- The To-Do List React app set up and running
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Test Scenarios
 
-## Expanding the ESLint configuration
+### 1. Adding a Task
+**Steps:**
+1. Open the To-Do List application.
+2. Enter a new task in the input field.
+3. Click the "Add Task" button.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Expected Outcome:**
+- The new task should appear in the task list.
+- The input field should be cleared after adding the task.
+
+### 2. Removing a Task
+**Steps:**
+1. Add a task if none are present.
+2. Click the "Remove" button next to the task you want to delete.
+
+**Expected Outcome:**
+- The selected task should be removed from the task list.
+
+### 3. Marking a Task as Completed
+**Steps:**
+1. Add a task if none are present.
+2. Click on the task text to mark it as completed.
+
+**Expected Outcome:**
+- The task text should have a line-through decoration indicating completion.
+- Clicking the task text again should unmark it as completed.
+
+### 4. Filtering Tasks
+**Steps:**
+1. Add multiple tasks, marking some as completed.
+2. Use the filter dropdown to select "All", "Completed", and "Incomplete".
+
+**Expected Outcome:**
+- "All" should display all tasks.
+- "Completed" should display only the tasks marked as completed.
+- "Incomplete" should display only the tasks not marked as completed.
+
+### 5. Sorting Tasks
+To add optional sorting to the todo list, we can introduce a sorting mechanism that allows users to sort the tasks by various criteria, such as by task name, creation date, or completion status.
+
+**Steps:**
+1. Add multiple tasks with different names and completion statuses.
+2. Use the sort dropdown to select sorting criteria such as "Task Name", "Creation Date", or "Completion Status".
+
+### 6. Data Persistence
+**Steps:**
+1. Add multiple tasks.
+2. Refresh the browser.
+
+**Expected Outcome:**
+- The tasks should persist and appear in the task list after the page reloads.
+
+## Manual Testing Tips
+- Ensure that task input validation works (i.e., prevent adding empty tasks).
+- Verify the behavior of the application across different browsers and devices.
+- Test edge cases, such as adding tasks with the same name.
+
+## Automated Testing (Optional)
+Consider writing automated tests using a testing library like Jest with React Testing Library. Example tests could include:
+- Rendering the component and checking initial state.
+- Simulating user interactions such as adding, removing, and completing tasks.
+- Verifying that the localStorage integration works as expected.
+
+## Conclusion
+Follow these testing steps to ensure the To-Do List component functions correctly. Document any issues or bugs discovered during testing and address them as needed.
