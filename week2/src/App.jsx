@@ -1,11 +1,11 @@
 import './App.css';
-import { TodoWrapperLocalStorage } from './components/TodoWrapperLocalStorage';
+import { TodoWrapper } from "./components/TodoWrapper";
 
 function App() {
   return (
     <div className="App">
       {/* <TodoWrapper  /> */}
-      <TodoWrapperLocalStorage />
+      <TodoWrapper />
     </div>
   );
 }

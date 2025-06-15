@@ -1,0 +1,145 @@
+/* Modern Todo App - Eye-friendly & Centered */
+:root {
+  /* Softer color palette */
+  --bg-color: #f8fafc;
+  --surface-color: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent-color: #4f46e5;
+  --border-color: #e2e8f0;
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Centered app container */
+.todo-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+.app-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.app-header p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Form styles */
+.todo-form {
+  background: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+.form-group {
+  margin-bottom: 1.25rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.todo-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+.todo-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+.add-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.add-btn:hover {
+  background: #4338ca;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+.control-group {
+  display: flex;
+  align-items: center;
+}
+.control-group label {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+select {
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  background: var(--surface-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--text-secondary);
+}
+
+/* Stats */
+.stats {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  .controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
